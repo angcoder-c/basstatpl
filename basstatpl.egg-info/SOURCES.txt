@@ -1,7 +1,0 @@
-README.md
-setup.py
-basstatpl/__init__.py
-basstatpl.egg-info/PKG-INFO
-basstatpl.egg-info/SOURCES.txt
-basstatpl.egg-info/dependency_links.txt
-basstatpl.egg-info/top_level.txt
