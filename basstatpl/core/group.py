@@ -1,2 +1,3 @@
+import pandas as pd
 def hola():
-    return 'hola'
+    return pd.Series([1,2,3,4,4])
