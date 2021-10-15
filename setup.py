@@ -16,10 +16,10 @@ LONG_DESC_TYPE = "text/markdown"
 
 
 INSTALL_REQUIRES = [
-    'pandas',
-    'numpy',
-    'matplotlib',
-    'plotnine'
+    'pandas = 1.2.4',
+    'numpy = 1.20.3',
+    'matplotlib = 3.4.2',
+    'plotnine = 0.8.0'
     ]
 
 setup(
