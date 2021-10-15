@@ -1,2 +1,3 @@
+from math import log 
 def hola():
-    return 'hola'
+    return log(20)
