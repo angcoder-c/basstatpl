@@ -16,12 +16,11 @@ LONG_DESC_TYPE = "text/markdown"
 
 
 INSTALL_REQUIRES = [
-      'pymupdf',
-      'pandas',
-      'numpy',
-      'matplotlib',
-      'plotnine' 
-      ]
+    'pandas',
+    'numpy',
+    'matplotlib',
+    'plotnine'
+    ]
 
 setup(
     name=PACKAGE_NAME,
