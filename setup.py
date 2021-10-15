@@ -38,7 +38,7 @@ setup(
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
     python_requires=">=3.6",
-    test_suite='tests',
+    test_suite='basstatpl/tests',
     packages=find_packages(),
     include_package_data=True,
 )
