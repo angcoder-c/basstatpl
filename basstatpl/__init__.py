@@ -1,1 +1,0 @@
-#from basstatpl.core.group import saludo
