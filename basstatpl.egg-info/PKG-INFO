@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: basstatpl
+Version: 0.0.1
+Summary: Library dedicated to performing different tabulations and basic statistical calculations.
+Home-page: https://github.com/Angel-Gabriel-Chavez
+Author: Angel Gabriel Chavez Otzoy
+License: MIT
+Description: -----------------README provisional----------------
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

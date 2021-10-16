@@ -1,1 +1,1 @@
-#from basstatpl.core.group import saludo
+from basstatpl.core.group import GroupedData

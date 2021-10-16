@@ -1,0 +1,17 @@
+README.md
+setup.py
+basstatpl/__init__.py
+basstatpl.egg-info/PKG-INFO
+basstatpl.egg-info/SOURCES.txt
+basstatpl.egg-info/dependency_links.txt
+basstatpl.egg-info/requires.txt
+basstatpl.egg-info/top_level.txt
+basstatpl/core/__init__.py
+basstatpl/core/group.py
+basstatpl/core/simple.py
+basstatpl/core/ztab.py
+basstatpl/errors/__init__.py
+basstatpl/tests/__init__.py
+basstatpl/tests/test_group.py
+basstatpl/tests/test_simple.py
+basstatpl/tests/test_ztab.py
