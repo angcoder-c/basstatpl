@@ -6,14 +6,6 @@ import pandas._testing as tm
 ls = [27,23,22,24,24,30,25,23,22,15,18,18,29,28,27,27,23,19,26,30,25,29,24,30,20,23,24,30,22,25]
 g = bst.GroupedData(ls)
 
-'''
-15
-30
-5.874500140574885
-15
-2.5
-3
-'''
 def test_data():
     assert g.source == ls
     assert g.n == 30
