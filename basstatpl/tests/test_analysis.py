@@ -81,7 +81,7 @@ def test_frequency_table2():
     tm.assert_frame_equal(a3.frequency_table, df, check_dtype = False)
 
 dct_num2 = {15:1,18:2,19:1,20:1,22:3,23:4,24:4,25:3,26:1,27:3,28:1,29:2,30:4}
-a3 = bst.GroupedData(dct_num2)
+a4 = bst.GroupedData(dct_num2)
 
 def test_frequency_table3():
     df = pd.DataFrame({'Lr': {0: pd.Interval(15.0, 18.0, closed='left'), 
@@ -128,4 +128,4 @@ def test_frequency_table3():
             'FG': {0: 12.0, 1: 48.0, 
                    2: 84.0, 3: 96.0, 
                    4: 72.0, 5: 48.0}})
-    tm.assert_frame_equal(a3.frequency_table, df, check_dtype = False)
+    tm.assert_frame_equal(a4.frequency_table, df, check_dtype = False)
