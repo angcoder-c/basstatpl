@@ -1,40 +1,45 @@
 from math import log
 import pandas as pd
-import numpy as np
+from basstatpl.core.base.calculations import BaseCalcs
+from basstatpl.core.util.tools import approach, first_greater_than, max_interval
 import matplotlib.pyplot as plt
-import decimal
 
-def approach(num):
-    return int(decimal.Decimal(num).quantize(decimal.Decimal('1'), rounding=decimal.ROUND_HALF_UP))
-
-def max_interval(obj):
-    max = obj.minimum + (obj.sturges_rule * obj.amplitude) + 1
-    return (obj.minimum,max)
-
-class GroupedData:
+class GroupedData(BaseCalcs):
   def __init__(self, data=None):
-    self.source = data
-    self.n = len(data)
-    self.minimum = min(data)
-    self.maximum = max(data)
-    self.sturges_rule = 1 + (3.3 * log(self.n,10))
-    self.rank = self.maximum - self.minimum
-    self.interval = self.rank/approach(self.sturges_rule)
-    self.amplitude = approach(self.interval)
+    BaseCalcs.__init__(self, data)
 
-    intervals = pd.interval_range(start= self.minimum,
-                                       end= max_interval(self)[1],
-                                       freq= self.amplitude,
-                                       closed="left")
+    if str(type(data)) == "<class 'list'>":
+      self.source = pd.Series(data)
+
+    elif str(type(data)) == "<class 'dict'>":
+          x = list(data.keys())
+          f = list(data.values())
+          r = range(len(data))
+          
+          if str(type(x[0])) == "<class 'int'>" or str(type(x[0])) == "<class 'float'>":
+                nx = "".join([(str(x[i]) + ' ') * f[i] for i in r]).split()
+                self.source = pd.Series(list(map(int, nx)))  
+
+          elif str(type(x[0])) == "<class 'tuple'>":
+                self.source = pd.Series(data)
+                intervals = [pd.Interval(i[0], i[1], closed='left') for i in x]
+                freq = f
+    
+    if str(type(self.source.index[0])) == "<class 'int'>":
+      intervals = pd.interval_range(start= self.minimum,
+                                  end= max_interval(self)[1],
+                                  freq= self.amplitude,
+                                  closed="left")
+      dist = [list(filter(lambda x: x in i, self.source)) for i in intervals]
+      freq = [len(j) for j in dist]   
+
     df = pd.DataFrame({'Lr':list(intervals)})
     df['La_float'] = [pd.Interval(i.left - 0.5, i.right - 0.5, closed = 'both')
                       for i in df['Lr']]
     df['La'] = [pd.Interval(i.left, i.right - 1, closed = 'both')
                 for i in df['Lr']]                    
     df['Xi'] = [(i.left + i.right)/2 for i in df['La']]
-
-    dist = [list(filter(lambda x: x in i, self.source)) for i in df['Lr']]
-    df['Fi'] = [len(j) for j in dist]
+    df['Fi'] = freq
     df['Fa'] = df['Fi'].cumsum()
     df['Fr'] = df['Fi'] / self.n
     df['FrP'] = df['Fr'] * 100
@@ -123,3 +128,15 @@ class GroupedData:
 
     bc = (q1 - (2 * q2) + q3) / (q3 - q1)
     return bc
+
+  def add_total(self):
+    df = self.frequency_table.copy()
+    types = [[i, str(df[i].dtype)] for i in df.columns.to_list()]
+    col = []
+    for i in types:
+      if i[1] == 'int64' or i[1] == 'float64':
+        col.append(i[0])
+    f = col[0]
+    t = col[-1]
+    df.loc[len(df), f:t] = df.loc[:, f:t].sum()
+    return df
