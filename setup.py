@@ -24,7 +24,7 @@ INSTALL_REQUIRES = [
 
 setup(
     name=PACKAGE_NAME,
-    #packages=find_packages(include=[PACKAGE_NAME]),
+    packages=find_packages(include=[PACKAGE_NAME]),
     version=VERSION,
     author=AUTHOR,
     url=URL,
