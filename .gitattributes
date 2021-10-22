@@ -1,0 +1,15 @@
+# Python sources
+*.py    text diff=python
+
+# Documents
+*.md    text diff=markdown
+*.txt   text
+
+# Graphics
+*.png   binary
+*.ico   binary
+*.gif   binary
+*.svg   text
+
+# Data files
+*.csv   text
