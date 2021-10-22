@@ -1,4 +1,4 @@
-# <img alt=“BasstatPLlogo” src=”/branding/logo/logo.png">
+![logo](/branding/logo/logo.png)
 # BasstatPL
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) 
 
