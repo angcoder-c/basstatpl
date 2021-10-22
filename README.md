@@ -1,7 +1,5 @@
 ![logo](/branding/logo/logo.png)
 # BasstatPL
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) 
-
 BasstatPL is a package for performing different tabulations and calculations for descriptive statistics.
 It provides:
 - Frequency table constructors for simple and grouped data
