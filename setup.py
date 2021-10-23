@@ -8,7 +8,7 @@ VERSION = '0.0.1'
 PACKAGE_NAME = 'basstatpl'
 AUTHOR = 'Angel Gabriel Chavez Otzoy' 
 AUTHOR_EMAIL = 'angelgabrielchavez18@gmail.com' 
-URL = 'https://github.com/Angel-Gabriel-Chavez'
+URL = 'https://github.com/Angel-Gabriel-Chavez/basstatpl'
 
 LICENSE = 'MIT'
 DESCRIPTION = 'Library dedicated to performing different tabulations and basic statistical calculations.'
@@ -18,13 +18,11 @@ LONG_DESC_TYPE = "text/markdown"
 INSTALL_REQUIRES = [
     'pandas',
     'numpy',
-    'matplotlib',
-    'plotnine'
+    'matplotlib'
     ]
 
 setup(
     name=PACKAGE_NAME,
-    packages=find_packages(include=[PACKAGE_NAME]),
     version=VERSION,
     author=AUTHOR,
     url=URL,
