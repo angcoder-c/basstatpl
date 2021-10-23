@@ -1,4 +1,4 @@
-![logo](/branding/logo/logo.png)
+![logo](/branding/logo/logo.svg)
 # BasstatPL
 BasstatPL is a package for performing different tabulations and calculations for descriptive statistics.
 It provides:
