@@ -28,6 +28,7 @@ setup(
     version=VERSION,
     author=AUTHOR,
     url=URL,
+    keywords='table statistical descriptive',
     description = DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     long_description_content_type=LONG_DESC_TYPE,
