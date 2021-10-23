@@ -23,11 +23,9 @@ INSTALL_REQUIRES = [
 
 setup(
     name=PACKAGE_NAME,
-    packages=[PACKAGE_NAME],
     version=VERSION,
     author=AUTHOR,
     url=URL,
-    download_url='https://github.com/Angel-Gabriel-Chavez/basstatpl/archive/v0.0.1.tar.gz',
     keywords='table statistical descriptive',
     description = DESCRIPTION,
     long_description=LONG_DESCRIPTION,
